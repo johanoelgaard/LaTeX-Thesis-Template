@@ -1,0 +1,30 @@
+\documentclass[12pt]{article} 
+%artikel skriftstørrelse 12
+\usepackage{packages}
+\addbibresource{zotero.bib}
+
+
+\begin{document} 
+\input{00 frontpage.tex}
+\input{01 abstract.tex}
+\newpage
+\normalsize
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+\input{02 introduction.tex}
+\input{03 baseline model.tex}
+\input{04 extended extension.tex}
+\input{05 analysis.tex}
+\input{06 discussion and conclusion.tex}
+\newpage
+\input{89 references.tex}
+\newpage
+\appendix
+\input{93 appendix baseline.tex}
+\newpage
+\input{94 appendix extension.tex}
+\newpage
+\input{95 appendix analysis.tex}
+\end{document}
+

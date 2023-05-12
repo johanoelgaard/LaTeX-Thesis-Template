@@ -1,0 +1,105 @@
+\usepackage[utf8]{inputenc}
+% utf8 er overleafs standard inputconverter, det er ikke noget man skal tænke nærmere over
+\usepackage{geometry}
+% Geometry åbner for muligheden i at ændre på geometrien på papiret 
+\geometry{a4paper, right=25mm, left=25mm, top=25mm, bottom=25mm, , footnotesep = 3mm}
+% her sikre vi at størrelse på papir samt margener er den størrelse man ønsker
+\usepackage{lastpage}
+%Lader dig kalde hvor mange sider der er med \pageref{LastPage}
+\usepackage{setspace}
+\onehalfspacing
+%halvanden linjeafstand
+%\doublespacing
+%dobbelt linjeafstand
+\renewcommand{\arraystretch}{0.8}
+%sætter linjeafstanden i tabeller til altid at være 0.8 af normalen – særligt godt når man bruger halvanden linjeafstand og samtidigt bruger \begin{table}[H] da [H] overskriver latex mulighed for for at tilpasse de automatisk. Bruges \begin{table}[htbp] bør det sættes til 1 i stedet.
+\usepackage{float}
+%Tillader at man kan bruge [H] so, positionering af tabeller og figurer fx. \begin{table}[H] – hvor [H] siger det skal være den eksakte position
+\usepackage{multirow}
+%Giver mulighed for multirow i tabeller
+\usepackage{enumitem}
+% enumitem Gør at man kan nummerer som man ønsker dette – her a), b) c) etc.
+%vedr. {enumerate}[label=\alph*)]
+% \alph*) får den til at tælle a) b) c) etc. skal man springe over må man skrive \addtocounter{\enumX}{antal der skal springes over}, (X = \enumi bruges til 1. niveau, \enumii til 2. niveau og \enumiv til 3. niveau (her er listen kun i 1. niveau)).
+\usepackage{mathtools}
+% mathtools er en matematik pakke, med at der skal bruges til at opstille matematiske ligninger etc.
+\usepackage{icomma}
+%sørger for at kommaer og afstand står ordentligt
+\usepackage{amssymb}
+% Denne pakke åbner for bl.a. en række matematiske symboler
+\usepackage{graphicx}
+\usepackage{svg}
+% giver mulighed for at indsætte billeder
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\pgfplotsset{width=0.9\textwidth, height=5cm, compat=1.9}
+\usepackage{tikz}
+%tikz er en pakke der gør man kan grafer importeret fra mathcha.io
+\usetikzlibrary{intersections, pgfplots.fillbetween}
+\pgfdeclarelayer{pre main}
+%Pakker til at få latex til at tegne og udfylde ting i tegninger
+\usepackage{subfiles}
+%Tillader at man opdeler dokumentet i flere mindre dele – sub-filer
+
+
+%Det næste omhandler hvorledes ting numereres
+\numberwithin{equation}{section}
+%Sætter ligningsnummereringen til at tælle op for hver subsection i stedet for at tælle globalt i documentet
+%\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+%Sætter ligningsnummereringen til at vise section.subsection.equation – sammen med \numberwithin{equation}{subsection} sikres det at ligninger tælles for hver subsection og der ikke er flere ligninger med samme nummer
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+
+
+
+\usepackage[super]{nth}
+% når man skriver engelsk vil dette sikre man altid for det rigtige fx 1st, 2nd, 3rd etc. v. \nth{3}
+\usepackage{csquotes}
+%Giver mulighed for at citerer ting og automatisk få det til at stå pænt med \begin{displayquote} [...] \end{displayquote} – dette er til længere citater da det kommer på separat linje
+\usepackage{caption}
+\usepackage{subcaption}
+%Tilader at man kan ændre captions så der fx ikke står 'Figure' men 'Figur' ved en figur og 'Tabel' i stedet for 'Table' samt ændre detaljer omkring tabeller samt at man kan lave subfigurer
+\usepackage[compact]{titlesec}
+%\renewcommand\thesection{\thepart.\arabic{section}}
+%\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+%\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+%Tillader at ændre \titlespacing
+%\titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thepart.\thesection \quad }{0pt}{}
+%\titleformat{\subsection}[hang]{\normalfont\large\bfseries}{\thepart.\thesubsection \quad }{0pt}{}
+%\titleformat{\subsubsection}[hang]{\normalfont\large\bfseries}{\thepart.\thesubsubsection \quad }{0pt}{}
+\usepackage{titling}
+%Tillader at lave \droptitle
+\captionsetup{font=small,skip=0pt}
+%Mindsker størrelse og afstand på captions (ved tabeller og figurer)
+\AtBeginEnvironment{table}{\vspace{-2mm}}
+\AtEndEnvironment{table}{\vspace{-4mm}}
+%mindsker whitespace før og efter en tabel ved at lave negativ vertikal spacing
+\AtBeginEnvironment{figure}{\vspace{-2mm}}
+\AtEndEnvironment{figure}{\vspace{-4mm}}
+%mindsker whitespace før og efter en tabel ved at lave negativ vertikal spacing
+% Ændrer en masse parametrer når dokumentet starter da de ikke kan ændres globalt så vidt jeg ved
+\titlespacing*{\section}{0pt}{5pt}{0pt}
+%sætter spacing venstre, før og efter en section til 0 4 og 0
+%\titlespacing*{\subsection}{0pt}{4pt}{0pt}
+%\titlespacing*{\subsubsection}{0pt}{3pt}{0pt}
+%\setlength{\abovedisplayskip}{1pt}
+%\setlength{\belowdisplayskip}{1pt}
+%\setlength{\abovedisplayshortskip}{1pt} 
+%\setlength{\belowdisplayshortskip}{1pt}
+%sætter alle skip til at være 1 – det er særligt ligninger der bliver påvirket da equation-environment bruger disse 
+\setlength{\droptitle}{-20mm}
+%Får \maketitle til at starte 20 mm højere oppe på siden
+\usepackage[hidelinks]{hyperref}
+%Gør at alle \ref er mulige at klikke på og så sendes man direkte der til
+\urlstyle{same}
+%URL ved \url{} er normalt i en anden tekst type, det her sørger for at den står som den skal
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[skins,breakable]{tcolorbox}
+\usepackage{paracol}
+%Pakkerne xcolor microtype tcolorbox og paracol er alle pakker der skal bruges hvis man laver en "KU"- forside 
+\usepackage[backend = biber, style = authoryear-ibid, sorting = ynt]{biblatex}
+%til at lave referencelister
+\usepackage{lipsum}
+%kan lave placeholder text
