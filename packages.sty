@@ -88,8 +88,8 @@
 %\setlength{\abovedisplayshortskip}{1pt} 
 %\setlength{\belowdisplayshortskip}{1pt}
 %sætter alle skip til at være 1 – det er særligt ligninger der bliver påvirket da equation-environment bruger disse 
-\setlength{\droptitle}{-20mm}
-%Får \maketitle til at starte 20 mm højere oppe på siden
+\usepackage[backend = biber, style = authoryear-ibid, sorting = ynt]{biblatex}
+%til at lave referencelister
 \usepackage[hidelinks]{hyperref}
 %Gør at alle \ref er mulige at klikke på og så sendes man direkte der til
 \urlstyle{same}
@@ -99,7 +99,6 @@
 \usepackage[skins,breakable]{tcolorbox}
 \usepackage{paracol}
 %Pakkerne xcolor microtype tcolorbox og paracol er alle pakker der skal bruges hvis man laver en "KU"- forside 
-\usepackage[backend = biber, style = authoryear-ibid, sorting = ynt]{biblatex}
-%til at lave referencelister
+
 \usepackage{lipsum}
 %kan lave placeholder text
