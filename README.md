@@ -1,4 +1,4 @@
-# LaTeX-Thesis-Template
+# LaTeX Thesis Template for University of Copenhagen
 This template was created by Johan Ølgaard and comprises eleven sub-files with text rendered in the final document. The final document is rendered through **main.tex**, which inputs the eleven **.tex** files. As the document is created in the main.tex, one should not use begin{document} and end{document} in the sub-files. The **.tex** files in this template are filled with Lorem ipsum text to illustrate the visual form with text.
 
 Further, there are two additional files. **packages.sty** and **zotero.bib**. The first is a package that stores packages used to render the final document. It currently has most packages you would need and allows for customising spacing. It is recommended to take a look and see what packages are loaded.
