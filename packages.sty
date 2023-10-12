@@ -108,7 +108,11 @@
 %\setlength{\belowdisplayshortskip}{1pt}
 %sætter alle skip til at være 1 – det er særligt ligninger der bliver påvirket da equation-environment bruger disse 
 
-\usepackage[backend = biber, style = authoryear-ibid, sorting = ynt]{biblatex}
+\usepackage[
+backend = biber, 
+style = authoryear-ibid, %anvend APA eller authoryear-ibid
+sorting = ynt %anvend nyt for NameYearTitle eller ynt for YearNameTitle
+]{biblatex}
 %til at lave referencelister
 
 \usepackage[hidelinks]{hyperref}
