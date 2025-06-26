@@ -2,7 +2,9 @@
 % utf8 er overleafs standard inputconverter, det er ikke noget man skal tænke nærmere over
 \usepackage{geometry}
 % Geometry åbner for muligheden i at ændre på geometrien på papiret 
-\geometry{a4paper, right=25mm, left=25mm, top=25mm, bottom=25mm, , footnotesep = 3mm}
+\geometry{a4paper, 
+right=30mm, left=30mm, top=30mm, bottom=30mm, , footnotesep = 3mm
+}
 % her sikre vi at størrelse på papir samt margener er den størrelse man ønsker
 \usepackage{lastpage}
 %Lader dig kalde hvor mange sider der er med \pageref{LastPage}
@@ -13,6 +15,11 @@
 %dobbelt linjeafstand
 %\renewcommand{\arraystretch}{0.8}
 %sætter linjeafstanden i tabeller til altid at være 0.8 af normalen – særligt godt når man bruger halvanden linjeafstand og samtidigt bruger \begin{table}[H] da [H] overskriver latex mulighed for for at tilpasse de automatisk. Bruges \begin{table}[htbp] bør det sættes til 1 i stedet.
+\usepackage{longtable}
+% multi side tabeller
+\usepackage{pdflscape} 
+\usepackage{array}  
+
 \usepackage{float}
 %Tillader at man kan bruge [H] so, positionering af tabeller og figurer fx. \begin{table}[H] – hvor [H] siger det skal være den eksakte position
 \usepackage{multirow}
@@ -27,6 +34,8 @@
 %sørger for at kommaer og afstand står ordentligt
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 % Denne pakke åbner for bl.a. en række matematiske symboler
 \usepackage{graphicx}
 \usepackage{svg}
@@ -97,10 +106,17 @@
   \input{#1-chars.sum} characters (not including spaces)%
 }
 
-\usepackage[hidelinks]{hyperref}
-%Gør at alle \ref er mulige at klikke på og så sendes man direkte der til
+% \usepackage[hidelinks]{hyperref} % skjuler links
+% \usepackage{hyperref}
+% %Gør at alle \ref er mulige at klikke på og så sendes man direkte der til
+\usepackage[colorlinks=true,
+            linkcolor=black,   % <- internal links like \ref and \pageref
+            citecolor=black,   % <- citations, if you use them
+            filecolor=magenta, % <- local files
+            urlcolor=blue      % <- external links like \href and \url
+           ]{hyperref}
 \urlstyle{same}
-%URL ved \url{} er normalt i en anden tekst type, det her sørger for at den står som den skal
+% %URL ved \url{} er normalt i en anden tekst type, det her sørger for at den står som den skal
 
 \usepackage{xcolor}
 \usepackage{microtype}
